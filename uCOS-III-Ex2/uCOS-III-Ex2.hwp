@@ -173,6 +173,7 @@
 "C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex2\app_cloud.c" "User" "App" 2 
 "C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex2\app_probe.c" "User" "App" 2 
 "C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex2\app_tcpip.c" "User" "App" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex2\dns.c" "User" "C source file" 2 
 "C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex2\uC-Exosite\exosite.c" "User" "uC-Exosite" 2 
 "C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex2\uC-Exosite\flash_api_rx600.c" "User" "uC-Exosite" 2 
 "C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex2\uC-Exosite\flash_api_rx600.h" "User" "uC-Exosite" 2 
@@ -280,6 +281,7 @@
 "BSP|Glyph" "" 
 "BSP|TCP-IP V2" "" 
 "BSP|uCOS-III" "" 
+"C source file" "C source file" 
 "Docs" "Docs" 
 "uC-CPU" "uC-CPU" 
 "uC-DHCPc" "uC-DHCPc" 
