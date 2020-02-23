@@ -82,7 +82,6 @@ extern  volatile  CPU_INT16S  BSP_Accel_Z_Zero;
                   CPU_FP32    AppDegrees   = 0.0f;
                   CPU_INT32U  AppMagnitude = 0;
                   CPU_FP32    AppTemp_C    = 0.0f;
-                  CPU_FP32    AppTemp_F    = 0.0f;
 
 
 /*
@@ -172,6 +171,7 @@ static  void  AppTaskStart (void *p_arg)
     AppProbe_Init();                                            /* Initialize uC/Probe modules                          */
 #endif
 
+#ifdef APP_CFG_ACCEL_EN
     OSTaskCreate((OS_TCB     *)&AppAccelTaskTCB,                /* Create the accelerometer task                        */
                  (CPU_CHAR   *)"Accel Task",
                  (OS_TASK_PTR ) AppAccelTask,
@@ -185,6 +185,7 @@ static  void  AppTaskStart (void *p_arg)
                  (void       *) 0,
                  (OS_OPT      )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
                  (OS_ERR     *)&err);
+#endif /* APP_CFG_ACCEL_EN */
 
     OSTaskCreate((OS_TCB     *)&AppTempTaskTCB,                 /* Create the temperature task                          */
                  (CPU_CHAR   *)"Temp Task",
@@ -473,7 +474,6 @@ static  void  AppTempTask (void *p_arg)
         temp_c    = BSP_Temp_Rd();
 
         AppTemp_C = temp_c;
-        AppTemp_F = (AppTemp_C * 9.0f / 5.0f) + 32.0f;
     }
 }
 

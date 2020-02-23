@@ -141,7 +141,7 @@ static void CloudData_Task (void *p_arg)
     CPU_CHAR    *keys[3];
     CPU_CHAR    *values[3];
     CPU_CHAR     strping[4];
-    CPU_CHAR     strangle[4];
+    CPU_CHAR     strangle[7];
     CPU_CHAR     strtemp[4];
     CPU_CHAR     ping = 0;
     CPU_CHAR     ledctrl;
@@ -153,7 +153,7 @@ static void CloudData_Task (void *p_arg)
 
     keys[0] = "ping";
     values[0] = strping;
-    keys[1] = "angle";
+    keys[1] = "freq_a";
     values[1] = strangle;
     keys[2] = "temp";
     values[2] = strtemp;        
@@ -199,13 +199,12 @@ static void CloudData_Task (void *p_arg)
                                   DEF_YES,
                                  &strping[0]);
     
-                // Create angle string
-                Str_FmtNbr_Int32U(AppDegrees,
-                                  3u,
-                                  DEF_NBR_BASE_DEC,
-                                  ASCII_CHAR_NULL,
-                                  DEF_NO,
-                                  DEF_YES,
+                // Create Temperature string in 3.2 format
+				Str_FmtNbr_32 (AppTemp_C,
+                          	   3u,
+                               2u,
+                               ASCII_CHAR_NULL,
+                               DEF_YES,
                                  &strangle[0]);
                                  
                 // Create Temperature string
