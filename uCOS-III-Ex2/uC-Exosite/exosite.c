@@ -79,7 +79,7 @@ static CPU_SIZE_T socket_send(NET_SOCK_ID sock, CPU_CHAR *tx_buf, CPU_SIZE_T tx_
 static CPU_SIZE_T url_encode(CPU_CHAR *buf, CPU_SIZE_T bufsize, CPU_CHAR *str, CPU_SIZE_T strlen);
 
 CPU_BOOLEAN Exosite_Update(void);
-
+extern NET_IP_ADDR ngethostbyname(const char *host, CPU_INT16U query_type);
 /*
 *********************************************************************************************************
 *********************************************************************************************************
@@ -87,6 +87,9 @@ CPU_BOOLEAN Exosite_Update(void);
 CPU_BOOLEAN Exosite_Reinit(void)
 {
     CPU_SIZE_T i;
+
+    const char hostname[]="\2m2\7exosite\3com"; //"m2.exosite.com"; 
+    IP = ngethostbyname(hostname,1);
 
     update_m2ip();
     activate_device();
